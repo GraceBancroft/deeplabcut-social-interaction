@@ -2,7 +2,7 @@ import tkinter as tk
 import webbrowser
 import pandas as pd
 from accuracy import make_accuracy_buttons
-from social_interaction import make_social_interaction_buttons
+from slr import make_slr_buttons
 from extract_frames import make_extraction_buttons
 from interaction_zone import make_interaction_zone_buttons
 
@@ -26,9 +26,9 @@ accuracy_frame = tk.Frame(root)
 accuracy_frame.grid(row=0, column=0, sticky='nsew')
 accuracy_frame.columnconfigure(0, weight=1)
 
-social_interaction_frame = tk.Frame(root)
-social_interaction_frame.grid(row=0, column=0, sticky='nsew')
-social_interaction_frame.columnconfigure(0, weight=1)
+slr_frame = tk.Frame(root)
+slr_frame.grid(row=0, column=0, sticky='nsew')
+slr_frame.columnconfigure(0, weight=1)
 
 extraction_frame = tk.Frame(root)
 extraction_frame.grid(row=0, column=0, stick='nsew')
@@ -43,9 +43,9 @@ def main_page_frame_buttons():
     accuracy_btn = tk.Button(main_page_frame, text='Dropped Frames / Accuracy',
                              command=lambda: display_frame(accuracy_frame))
     accuracy_btn.grid(row=1, column=0)
-    social_interaction_btn = tk.Button(main_page_frame, text='Social Interaction',
-                                       command=lambda: display_frame(social_interaction_frame))
-    social_interaction_btn.grid(row=2, column=0)
+    slr_btn = tk.Button(main_page_frame, text='Social Interaction',
+                                       command=lambda: display_frame(slr_frame))
+    slr_btn.grid(row=2, column=0)
     extraction_btn = tk.Button(main_page_frame, text='Extraction / Live Video Analysis',
                                command=lambda: display_frame(extraction_frame))
     extraction_btn.grid(row=3, column=0)
@@ -67,8 +67,8 @@ def main_menu_buttons(tk, frame):
 make_accuracy_buttons(tk, accuracy_frame)
 main_menu_buttons(tk, accuracy_frame)
 
-make_social_interaction_buttons(tk, social_interaction_frame)
-main_menu_buttons(tk, social_interaction_frame)
+make_slr_buttons(tk, slr_frame)
+main_menu_buttons(tk, slr_frame)
 
 make_extraction_buttons(tk, extraction_frame)
 main_menu_buttons(tk, extraction_frame)
